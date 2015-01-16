@@ -1,0 +1,2 @@
+Devise.secret_key = "bf8ab3bbc505c1b0d28ee55df1b61d2be1a856f7c900a6786a706f79e48b4fc881057ba6d2e399162b5876486cc6d5f681d7"
+Devise.scoped_views = true
