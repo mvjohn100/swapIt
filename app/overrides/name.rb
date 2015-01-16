@@ -25,15 +25,17 @@ Deface::Override.new(:virtual_path => "spree/admin/users/edit",
 Deface::Override.new(:virtual_path => "spree/checkout/_delivery",
                      :name => "deliveryInstruction",
                      :insert_top => "[data-hook='buttons']",
-                     :text => "<h6>1) You want to pay VPP postal charges when you receive the books</h6>
-                               <h6>2) VPP charge showed here is not accurate. there may be slight difference</h6>
-                               <h6>3) you don't want to pay price of book or Order total. </h6>")
+                     :text => "<h6>1) Since we not collecting shipping charges.we kept it as zero.</h6>
+                               <h6>2) You want to pay VPP postal charges when you receive the books </h6>
+                               <h6>3) VPP charges:- Firts 500 grams 25 INR,every additional 500 grams cost 18 INR</h6>
+                               <h6>4) You don't want to pay price of the book or Order total.you only want to pay VPP charges.</h6>
+                               <h6>5) we keep book price for point calculation purpose</h6>")
 Deface::Override.new(:virtual_path => "spree/checkout/_payment",
                      :name => "paymentInstruction",
                      :insert_top => "[data-hook='checkout_payment_step']",
-                     :text => "<h6>1) Here using your points to purchase the items </h6>
-                              <h6> 2) one points equals to 5 Indian Rupess </h6>
-                               ")
+                     :text => "<h6>1) Able to purchase items only using gained points </h6>
+                              <h6> 2) you gain points for your books, which you send to us </h6>
+                              ")
 Deface::Override.new(
     :virtual_path => 'spree/checkout/_payment',
     :name => 'remove_bank_transfer_instructions_link_to_payment',
