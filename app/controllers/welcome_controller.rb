@@ -1,5 +1,13 @@
 class WelcomeController < ApplicationController
-  layout nil
+  layout 'welcome'
   def index
   end
+
+  def register
+  end
+  def about
+
+  end
+
+
 end

@@ -1,0 +1,58 @@
+<%= t('order_mailer.confirm_email.dear_customer') %>
+
+<%= t('order_mailer.confirm_email.instructions') %>
+
+============================================================
+<%= t('order_mailer.confirm_email.order_summary') %>
+============================================================
+<% @order.line_items.each do |item| %>
+  <%= item.variant.sku %> <%= raw(item.variant.product.name) %> <%= raw(item.variant.options_text) -%> (<%=item.quantity%>) @ <%= item.single_money %> = <%= item.display_amount %>
+<% end %>
+============================================================
+<%= t('order_mailer.confirm_email.subtotal', :subtotal => @order.display_item_total) %>
+
+<% @order.adjustments.eligible.each do |adjustment| %>
+  <%= raw(adjustment.label) %> <%= adjustment.display_amount %>
+<% end %>
+
+<%= t('order_mailer.confirm_email.total', :total => @order.display_total) %>
+
+Please check the following conditions/instructions
+
+1)
+
+plants are in blooming stage. blooming stage means plants with no buds or spike. it will start to have buds or spike with in few weeks only. usually we send  bare root plant wrapped with little bit mixture.
+
+2)
+we care almost all care to make to reach the plants safely to your hands. we noticed some times a slight recoverable damged may occure to the plants due to mishandling of the box properly. especially the surface mode transport
+
+3)
+we send plants on every Tuesday. so please make sure to pay  on or before of monday. Apart from bank Transfer other option for payment is paypal.
+
+paypal email:- payment@klairvoyant.com
+
+Bank Details
+
+Bank:- ICICI
+Branch Guruvayoor
+IFSC :-ICIC0000755
+Account Name:- klairvoyant info solutions
+Account Type:- Current
+Account Number:- 075505000211
+
+4) please mention the order number (Find it in the subject line example:- #R387521250 ) in bank transaction comment to recognise your transaction
+
+5) Once you received this mail means the plants you ordered are kept aside and automatically deducted from the site list. so please make sure to pay as yearly as possible. order will be cancelled after one weeks waiting period.
+
+
+<%= t('order_mailer.confirm_email.thanks') %>
+
+
+Rigy,
+For Klairvoyant
+
+
+
+
+
+

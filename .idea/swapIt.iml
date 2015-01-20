@@ -348,6 +348,7 @@
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, RVM: ruby-2.1.2 [bookSwap]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="truncate_html (v0.9.2, RVM: ruby-2.1.2 [bookSwap]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v2.5.3, RVM: ruby-2.1.2 [bookSwap]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="twitter-bootstrap-rails (v2.2.8, RVM: ruby-2.1.2 [bookSwap]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.42, RVM: ruby-2.1.2 [bookSwap]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.7.0, RVM: ruby-2.1.2 [bookSwap]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uuidtools (v2.1.5, RVM: ruby-2.1.2 [bookSwap]) [gem]" level="application" />

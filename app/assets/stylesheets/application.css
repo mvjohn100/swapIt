@@ -11,3 +11,37 @@
  *= require_self
  *= require_tree .
  */
+
+.backColour {
+    background-color: #e5e4d2;
+}
+.text1 {
+    font-family: Leckerli One, Arial, serif;
+    font-weight: 400;
+    text-align: center;
+    /*color: #bf7550;*/
+    color:#0198dd;
+
+}
+.picture1 {
+    padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.head_colour{
+    color:#0198dd;
+    font-size:30px
+}
+
+.menuColour {
+    color:#0198dd;
+    font-size: 25px;
+
+
+}
+.makeDown {
+    padding-top: 6px;
+    padding-left: 200px;
+}
