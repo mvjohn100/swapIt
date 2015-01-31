@@ -54,6 +54,4 @@ gem 'spree-bank-transfer', require: 'spree_bank_transfer'
 gem 'spree_zero_stock_products'
 gem 'spree_simple_weight_calculator', github: 'freego/spree_simple_weight_calculator',branch: '2-2-stable'
 
-# gem "therubyracer"
-# gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"

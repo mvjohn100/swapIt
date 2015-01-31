@@ -25,7 +25,8 @@ Deface::Override.new(:virtual_path => "spree/admin/users/edit",
 Deface::Override.new(:virtual_path => "spree/checkout/_delivery",
                      :name => "deliveryInstruction",
                      :insert_top => "[data-hook='buttons']",
-                     :text => "<h6>1) Since we not collecting shipping charges.we kept it as zero.</h6>
+                     :text => "<h6>Not need to go through following instructions if you are doing registration</h6>
+                               <h6>1) Since we not collecting shipping charges.we kept it as zero.</h6>
                                <h6>2) You want to pay VPP postal charges when you receive the books </h6>
                                <h6>3) VPP charges:- Firts 500 grams 25 INR,every additional 500 grams cost 18 INR</h6>
                                <h6>4) You don't want to pay price of the book or Order total.you only want to pay VPP charges.</h6>
@@ -33,14 +34,14 @@ Deface::Override.new(:virtual_path => "spree/checkout/_delivery",
 Deface::Override.new(:virtual_path => "spree/checkout/_payment",
                      :name => "paymentInstruction",
                      :insert_top => "[data-hook='checkout_payment_step']",
-                     :text => "<h6>1) Able to purchase items only using gained points </h6>
+                     :text => "<h6>1) Bank Transfer is for first time registration </h6>
                               <h6> 2) you gain points for your books, which you send to us </h6>
                               ")
-Deface::Override.new(
-    :virtual_path => 'spree/checkout/_payment',
-    :name => 'remove_bank_transfer_instructions_link_to_payment',
-    :replace => "erb[loud]:contains('How Bank Transfer works?')",
-    :text => "<h6>Point Details </h6>"
-)
+# Deface::Override.new(
+#     :virtual_path => 'spree/checkout/_payment',
+#     :name => 'remove_bank_transfer_instructions_link_to_payment',
+#     :replace => "erb[loud]:contains('How Bank Transfer works?')",
+#     :text => "<h6>Point Details </h6>"
+# )
 
 

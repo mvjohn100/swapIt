@@ -1,55 +1,44 @@
-<%= t('order_mailer.confirm_email.dear_customer') %>
+<%= Spree.t('order_mailer.confirm_email.dear_customer') %>
 
-<%= t('order_mailer.confirm_email.instructions') %>
+<%= Spree.t('order_mailer.confirm_email.instructions') %>
 
 ============================================================
-<%= t('order_mailer.confirm_email.order_summary') %>
+<%= Spree.t('order_mailer.confirm_email.order_summary') %>
 ============================================================
 <% @order.line_items.each do |item| %>
-  <%= item.variant.sku %> <%= raw(item.variant.product.name) %> <%= raw(item.variant.options_text) -%> (<%=item.quantity%>) @ <%= item.single_money %> = <%= item.display_amount %>
+    <%= item.variant.sku %> <%= raw(item.variant.product.name) %> <%= raw(item.variant.options_text) -%> (<%=item.quantity%>) @ <%= item.single_money %> = <%= item.display_amount %>
 <% end %>
 ============================================================
-<%= t('order_mailer.confirm_email.subtotal', :subtotal => @order.display_item_total) %>
-
-<% @order.adjustments.eligible.each do |adjustment| %>
-  <%= raw(adjustment.label) %> <%= adjustment.display_amount %>
+<%= Spree.t('order_mailer.confirm_email.subtotal', :subtotal => @order.display_item_total) %>
+<% if @order.line_item_adjustments.exists? %>
+    <% if @order.all_adjustments.promotion.eligible.exists? %>
+        <% @order.all_adjustments.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
+            <%= Spree.t(:promotion) %>: <%= label %> <%= Spree::Money.new(adjustments.sum(&:amount), currency: @order.currency) %>
+        <% end %>
+    <% end %>
 <% end %>
 
-<%= t('order_mailer.confirm_email.total', :total => @order.display_total) %>
+<% @order.shipments.group_by { |s| s.selected_shipping_rate.try(:name) }.each do |name, shipments| %>
+    <%= Spree.t(:shipping) %>: <%= name %> <%= Spree::Money.new(shipments.sum(&:discounted_cost), currency: @order.currency) %>
+<% end %>
 
-Please check the following conditions/instructions
+<% if @order.all_adjustments.eligible.tax.exists? %>
+    <% @order.all_adjustments.eligible.tax.group_by(&:label).each do |label, adjustments| %>
+        <%= Spree.t(:tax) %>: <%= label %> <%= Spree::Money.new(adjustments.sum(&:amount), currency: @order.currency) %>
+    <% end %>
+<% end %>
 
-1)
+<% @order.adjustments.eligible.each do |adjustment| %>
+    <% next if (adjustment.source_type == 'Spree::TaxRate') and (adjustment.amount == 0) %>
+    <%= adjustment.label %> <%= adjustment.display_amount %>
+<% end %>
+============================================================
+<%= Spree.t('order_mailer.confirm_email.total', :total => @order.display_total) %>
 
-plants are in blooming stage. blooming stage means plants with no buds or spike. it will start to have buds or spike with in few weeks only. usually we send  bare root plant wrapped with little bit mixture.
+<%= Spree.t('order_mailer.confirm_email.thanks') %>
 
-2)
-we care almost all care to make to reach the plants safely to your hands. we noticed some times a slight recoverable damged may occure to the plants due to mishandling of the box properly. especially the surface mode transport
-
-3)
-we send plants on every Tuesday. so please make sure to pay  on or before of monday. Apart from bank Transfer other option for payment is paypal.
-
-paypal email:- payment@klairvoyant.com
-
-Bank Details
-
-Bank:- ICICI
-Branch Guruvayoor
-IFSC :-ICIC0000755
-Account Name:- klairvoyant info solutions
-Account Type:- Current
-Account Number:- 075505000211
-
-4) please mention the order number (Find it in the subject line example:- #R387521250 ) in bank transaction comment to recognise your transaction
-
-5) Once you received this mail means the plants you ordered are kept aside and automatically deducted from the site list. so please make sure to pay as yearly as possible. order will be cancelled after one weeks waiting period.
-
-
-<%= t('order_mailer.confirm_email.thanks') %>
-
-
-Rigy,
-For Klairvoyant
+John
+For Klairvoyant Swap It
 
 
 
