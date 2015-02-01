@@ -1,10 +1,75 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Registre</title>
-</head>
-<body>
-  dddddddd
-</body>
-</html>
+
+<div class="row">
+  <div class="span1">
+    &nbsp;
+  </div>
+  <div class="span10">
+
+    <div class="jumbotron">
+      <h1>1 Registration </h1>
+       <div class="row">
+         <div class="span8 fontsize">
+           </br>
+           <p>First step is to register on the site with one time payment.we collecting this amount to maintain the site and staff to deals sending and receiving books. we using bank transfer to collect this amount.you do the registration by buying the item "Register". you will get Registration charge,bank details while doing the purchase process.Apart from books in the future we may introduced CD,DVD,Stamps Etc..    </p>
+
+         </div>
+         <div class="span2">
+           </br>
+           <%= link_to "Register",'/store/products/register',:class=>"btn btn-large btn-primary btn-lg" %>
+         </div>
+
+       </div>
+
+
+    </div>
+    <div class="jumbotron">
+      <h1>2 Send us your old books </h1>
+      <div class="row">
+        <div class="span6 fontsize">
+          </br>
+          <p>You want to send your old books to the displayed address.you want to pay for parcel charge.
+
+            Point is calculated based on 1) price * 0.05, 2) Page Number * 0.025 (if price is absent). once we received the books we check quality of the book and added it to the site. your points also updated. you can check the stats of the point using "your points" button.
+          </p>
+
+        </div>
+        <div class="span2">
+          </br>
+          <address>
+            Swap It,</br>
+            Klairvoyant Enterprises </br>
+            33/279,Kottapady<br>
+            Guruvayoor, Thrissur </br>
+            Kerala, 680505
+          </address>
+
+        </div>
+        <div class="span2">
+          </br>
+          <%= link_to "Your points",'/store/account',:class=>"btn btn-large btn-primary btn-lg" %>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="jumbotron">
+      <h1>3 Select your books </h1>
+      <div class="row">
+        <div class="span8 fontsize">
+          </br>
+          <p> Now you select the books from site.you use points for purchasing this books. we send the selected books to your address by India post VPP. you want to pay postage charges.    </p>
+
+        </div>
+        <div class="span2">
+          </br>
+          <%= link_to "Select",'/store',:class=>"btn btn-large btn-primary btn-lg" %>
+        </div>
+
+      </div>
+      </br>
+      </br>
+    </div>
+  </div>
+</div>
+
